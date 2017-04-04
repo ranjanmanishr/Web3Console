@@ -1,4 +1,4 @@
-  let API=new api();
+  var API=new api();
 $(document).ready(function() {
     $('#term_demo').terminal(function(command, term) {
 
@@ -69,12 +69,12 @@ function api() {
 
 api.prototype.isValidCommand = function(str) {
 
-    let regex = /^web3.(\w)(\.*)(.*)(\()(.*)((\)|\);)$)/;
+    var regex = /^web3.(\w)(\.*)(.*)(\()(.*)((\)|\);)$)/;
     if (!regex.test(str)) return false;
 
-    let token = str.replace(/(\()(.*)((\)|\);)$)/, '').split(".");
+    var token = str.replace(/(\()(.*)((\)|\);)$)/, '').split(".");
 
-    let flag = true;
+    var flag = true;
     if (token.length === 2) {
 
         return this._1_web3.indexOf(token[1]) > -1;
